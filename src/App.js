@@ -21,7 +21,7 @@ class App extends React.Component {
   unsusbscribeFromAuth = null;
 
   componentDidMount() {
-    const {setCurrentUser} = this.props;
+    const { setCurrentUser } = this.props;
 
     this.unsusbscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
@@ -34,6 +34,7 @@ class App extends React.Component {
           });
         });
       }
+
       setCurrentUser(userAuth);
     });
   }
