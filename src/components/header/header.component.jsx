@@ -7,13 +7,15 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import CurrentUserContext from '../../contexts/current-user/current-user.context';
+import { CartContext } from '../../providers/cart/cart.provider';
 
 import { ReactComponent as Logo } from '../../assets/astro.svg';
 
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles'
 
-const Header = ({ hidden }) => {
+const Header = () => {
     const currentUser = useContext(CurrentUserContext);
+    const { hidden } = useContext(CartContext);
 
     return (
     <HeaderContainer>
